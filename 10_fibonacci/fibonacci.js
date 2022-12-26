@@ -1,12 +1,12 @@
 const fibonacci = function(ind) {
-    if (ind < 0) return 'OOPS'
-    let fibs = [1, 1];
-    let len = fibs.length;
-    while (len <= ind - 1) {
-        newFib = fibs[fibs.length - 1] + fibs[fibs.length - 2];
-        fibs.push(newFib)
-        len++;
+    if (ind <= 0) return 'OOPS';
+    let a = 0;
+    let b = 1;
+    for (let i = 1; i < ind; i++) {
+        let temp = b;
+        b = b + a;
+        a = temp;
     }
-    return fibs[ind - 1]
+    return b;
 };
 module.exports = fibonacci;
